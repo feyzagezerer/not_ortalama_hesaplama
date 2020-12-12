@@ -42,7 +42,7 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
             formKey.currentState.save();
           }
         },
-        child: Icon(Icons.add),
+        child: Text("Ders Ekle", textAlign: TextAlign.center),
       ),
       body: OrientationBuilder(builder: (context, orientation) {
         if (orientation == Orientation.portrait) {

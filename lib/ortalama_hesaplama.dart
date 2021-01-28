@@ -73,10 +73,10 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
                       hintStyle: TextStyle(fontSize: 20),
                       labelStyle: TextStyle(fontSize: 22),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.cyan, width: 3),
+                        borderSide: BorderSide(color: Colors.purple, width: 3),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.cyan, width: 3),
+                        borderSide: BorderSide(color: Colors.purple, width: 3),
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
@@ -119,7 +119,7 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
                             EdgeInsets.symmetric(horizontal: 20, vertical: 4),
                         margin: EdgeInsets.only(top: 10),
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.cyan, width: 3),
+                            border: Border.all(color: Colors.purple, width: 3),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
                       ),
@@ -139,7 +139,7 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
                             EdgeInsets.symmetric(horizontal: 26, vertical: 4),
                         margin: EdgeInsets.only(top: 10),
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.cyan, width: 3),
+                            border: Border.all(color: Colors.purple, width: 3),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
                       ),
@@ -153,10 +153,10 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
             margin: EdgeInsets.symmetric(vertical: 10),
             height: 70,
             decoration: BoxDecoration(
-                color: Colors.cyan,
+                color: Colors.purple,
                 border: BorderDirectional(
-                  top: BorderSide(color: Colors.grey, width: 2),
-                  bottom: BorderSide(color: Colors.grey, width: 2),
+                  top: BorderSide(color: Colors.purple.shade400, width: 2),
+                  bottom: BorderSide(color: Colors.purple.shade600, width: 2),
                 )),
             child: Center(
               child: RichText(
@@ -165,9 +165,9 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
                   children: [
                     TextSpan(
                         text: tumDersler.length == 0
-                            ? "Ders ekleyin "
+                            ? "Ortalama hesabı için ders ekleyin... "
                             : "Ortalama: ",
-                        style: TextStyle(fontSize: 30, color: Colors.white)),
+                        style: TextStyle(fontSize: 28, color: Colors.white)),
                     TextSpan(
                         text: tumDersler.length == 0
                             ? ""
@@ -215,11 +215,11 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
                           labelStyle: TextStyle(fontSize: 22),
                           enabledBorder: OutlineInputBorder(
                             borderSide:
-                                BorderSide(color: Colors.cyan, width: 3),
+                                BorderSide(color: Colors.purple, width: 3),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide:
-                                BorderSide(color: Colors.cyan, width: 3),
+                                BorderSide(color: Colors.purple, width: 3),
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(
@@ -263,7 +263,7 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
                             margin: EdgeInsets.only(top: 10),
                             decoration: BoxDecoration(
                                 border:
-                                    Border.all(color: Colors.cyan, width: 3),
+                                    Border.all(color: Colors.purple, width: 3),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10))),
                           ),
@@ -284,7 +284,7 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
                             margin: EdgeInsets.only(top: 10),
                             decoration: BoxDecoration(
                                 border:
-                                    Border.all(color: Colors.cyan, width: 3),
+                                    Border.all(color: Colors.purple, width: 3),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10))),
                           ),
@@ -298,7 +298,7 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
                 child: Container(
                   margin: EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                      color: Colors.cyan,
+                      color: Colors.purple,
                       border: BorderDirectional(
                         top: BorderSide(color: Colors.grey, width: 2),
                         bottom: BorderSide(color: Colors.grey, width: 2),
@@ -310,7 +310,7 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
                         children: [
                           TextSpan(
                               text: tumDersler.length == 0
-                                  ? "Ders Ekle "
+                                  ? "Ortalama hesabı için ders ekleyin... "
                                   : "Ortalama: ",
                               style:
                                   TextStyle(fontSize: 30, color: Colors.white)),
@@ -444,10 +444,13 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
         ),
         margin: EdgeInsets.all(4),
         child: ListTile(
-          leading: Icon(
-            Icons.add,
-            size: 36,
-            color: tumDersler[index].renk,
+          leading: Padding(
+            padding: const EdgeInsets.all(6.0),
+            child: Icon(
+              Icons.circle,
+              size: 26,
+              color: tumDersler[index].renk,
+            ),
           ),
           title: Text(tumDersler[index].ad),
           trailing: Icon(

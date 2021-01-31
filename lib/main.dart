@@ -1,7 +1,13 @@
+import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:not_ortalama_hesaplama/ortalama_hesaplama.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Initialize without device test ids
+  Admob.initialize();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override

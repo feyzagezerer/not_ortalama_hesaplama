@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:admob_flutter/admob_flutter.dart';
-//import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:not_ortalama_hesaplama/models/ders.dart';
 
@@ -43,17 +42,17 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
         handleEvent(event, args, 'Interstitial');
       },
     );
-
+/*
     rewardAd = AdmobReward(
       adUnitId: getRewardBasedVideoAdUnitId(),
       listener: (AdmobAdEvent event, Map<String, dynamic> args) {
         if (event == AdmobAdEvent.closed) rewardAd.load();
         handleEvent(event, args, 'Reward');
       },
-    );
+    );*/
 
     interstitialAd.load();
-    rewardAd.load();
+    // rewardAd.load();
   }
 
   void handleEvent(
@@ -459,6 +458,13 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
     ));
   }
 
+  @override
+  void dispose() {
+    interstitialAd.dispose();
+    // rewardAd.dispose();
+    super.dispose();
+  }
+
   List<DropdownMenuItem<int>> dersKredileriItems() {
     List<DropdownMenuItem<int>> krediler = [];
 
@@ -603,22 +609,22 @@ class _OrtalamaHesaplamaState extends State<OrtalamaHesaplama> {
 
 String getBannerAdUnitId() {
   if (Platform.isIOS) {
-    return 'ca-app-pub-3940256099942544/2934735716';
+    return 'ca-app-pub-3940256099942544/4339318960';
   } else if (Platform.isAndroid) {
-    return 'ca-app-pub-3940256099942544/6300978111';
+    return 'ca-app-pub-3940256099942544/8865242552';
   }
   return null;
 }
 
 String getInterstitialAdUnitId() {
   if (Platform.isIOS) {
-    return 'ca-app-pub-3940256099942544/4411468910';
+    return 'ca-app-pub-3940256099942544/4339318960';
   } else if (Platform.isAndroid) {
-    return 'ca-app-pub-3940256099942544/1033173712';
+    return 'ca-app-pub-3940256099942544/8865242552';
   }
   return null;
 }
-
+/*
 String getRewardBasedVideoAdUnitId() {
   if (Platform.isIOS) {
     return 'ca-app-pub-3940256099942544/1712485313';
@@ -626,7 +632,7 @@ String getRewardBasedVideoAdUnitId() {
     return 'ca-app-pub-3940256099942544/5224354917';
   }
   return null;
-}
+}*/
 
 class CustomFloatingActionButtonLocation extends FloatingActionButtonLocation {
   FloatingActionButtonLocation location;

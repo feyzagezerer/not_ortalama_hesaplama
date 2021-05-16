@@ -1,6 +1,6 @@
 import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:not_ortalama_hesaplama/ortalama_hesaplama.dart';
+import 'package:not_ortalama_hesaplama/average_calculation.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.purple, accentColor: Colors.green),
-      home: OrtalamaHesaplama(),
+      home: AverageCalculation(),
     );
   }
 }

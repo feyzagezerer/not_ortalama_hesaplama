@@ -1,11 +1,7 @@
-import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:not_ortalama_hesaplama/average_calculation.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  // Initialize without device test ids
-  Admob.initialize();
   runApp(MyApp());
 }
 
